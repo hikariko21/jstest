@@ -1,0 +1,52 @@
+"Z:\04_js\renshu\dom.html"
+<style> 
+	/*セレクタをおぼえましょう*/
+	#abc{color:#f00;}
+	.efg{border: 1px solid }
+	.efg em{font-size:1.5em}
+	input.efg{background-color: #ccc}
+	/*グレーにならないのはなぜ?*/
+</style>
+
+<script src="https://code.jquery.com/jquery-3.6.0.js"></script>
+<script>
+document.addEventListener('DOMContentLoaded', function(){
+	//生のjsでは
+	var h = '<em>Hello</em>';
+	document.getElementById('abc').innerHTML=h ;
+ 
+ //jQueryを使って書いた場合
+	$('#abc').html(h); //  ← 与える
+	var efg = $('.efg em').html(); //	 ← 取得する
+	$('#abc').after(efg); //#abcの次に挿入
+
+});
+
+</script>
+
+
+<h2>DOM(要素)に作用</h2>
+<p id="abc">こんにちは</p>
+<p class="efg"><em>123</em>456</p>
+<input type="radio" name="xyz">
+<input class="efg" type="text" name="tre">
+
+<pre>
+セレクタの書き方(記号の意味)
+	タグそのもの → タイプセレクタ
+	# →IDセレクタ (特定する目的)
+	. →クラスセレクタ (デザイン目的)
+	div p em → 親子セレクタ(スペースは親子関係を表す)
+	[type="radio"] → 属性セレクタ
+	h2 + p → 隣接セレクタ
+	p.efg  → 直接指定セレクタ 
+		※一番最後の要素が対象,その前は修飾してるだけ
+	h1,h2,h3 → 共通セレクタ 列挙したものに共通で適用
+
+
+ライブラリ = 部品として使う ← jQuery 
+フレームワーク = 枠組み   ← React,Vieu.js 
+
+jQueryの読み込み
+	1.CDN(コンテンツデリバリーネットワーク)から ← こっち
+	2.自サイトにDLしてから

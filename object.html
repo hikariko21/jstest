@@ -1,0 +1,13 @@
+
+<script>
+  var  pref = { //複数行でも書ける
+    "hokkaido": "北海道", 
+    "aomori" : "青森",
+    "fukushima" : "福島"
+   };
+
+  for (var key in pref) {
+    document.write( `<input type="radio" value="${key}">${pref[key]}` );
+  }
+
+</script>

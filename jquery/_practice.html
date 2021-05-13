@@ -1,0 +1,16 @@
+​
+<div id="box1" style="width: 100px; height: 100px; background-color: orange;display: none;"></div> 
+  <form>
+  <input type="button" id="btn_start" value="スタート">
+  </form>
+  
+<script src="https://code.jquery.com/jquery-3.6.0.js"></script>
+<script>
+$("#btn_start").on("click", function () {
+  $("#box1").animate({
+  width: "+=100px",
+  height: "-=50px",
+  opacity: 0.5
+  }, 1000);
+  });
+</script>

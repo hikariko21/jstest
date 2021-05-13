@@ -1,0 +1,9 @@
+
+<script>
+  var pref = { "hokkaido": "北海道", "aomori" :"青森", "fukushima" :"福島" };
+
+  for (let key in pref) { //var→let
+    document.write( `<input type="radio" name="group" value="${key}">${pref[key]}` );
+  }
+
+</script>
